@@ -1,0 +1,70 @@
+
+--------------Trưởng phòng---------------
+
+
+Trạng thái task
+0 New
+1 In progress
+2 Canceled
+3 Waiting
+4 Rejected
+5 Completed
+
+************* Trang task.php ****************
++  Trang danh sách task(task.php) của trưởng phòng sẽ hiện ra các task của phòng ban đó.
++ Nút tạo task 
++  Hiển thị thông tin task (Mã task, tiêu đề, mô tả,nhân viên, deadline, trạng thái)
+
++  Nút thông tin sẽ hiển thị toàn bộ  thông tin của task (modal) -> Tiêu đề, nhân viên, 
+mô tả, 'file đính kèm', deadline, trạng thái (tiến trình) .
++ Nút chi tiết sẽ chuyển tới trang chi tiết task (Trạng thái > 1 thì hiển thị )
++ Nút hủy task -> chuyển trạng thái task về canceled (Trạng thái < 1 thì hiển thị là nhân 
+viên chưa ấn chấp nhận) 
+
+************* Trang chitiettask.php ****************
+
+Trang thái duyệt 
+
+0 Đang xử lí Waiting
+1 Không được duyệt Rejected
+2 Được duyệt Completed
+
+-> Hiển thị chi tiết task của nhân viên
++ Hiển thị thông tin chi tiết task (Số thứ tự, Tên task, Trạng thái duyệt)
+
++ Nút chi tiết sẽ hiển thị toàn bộ chi tiết task nộp của nhân viên (modal) -> Tiêu đề, mô tả của nhân viên,
+file đính kèm) 
+
++ Trong modal chi tiết hiển thị 3 nút (Đóng, Không duyệt, Duyệt)
++ Nút đóng -> đóng modal
++ Nút không duyệt -> mở modal mới và hiển thị input thêm ngày deadline, 'file đính kèm', feedback -> sau khi nhấn 
+xác nhận task sẽ có trạng thái Rejected
+
++ Nút duyệt -> mở modal mới và hiển thị radio button :
+- đối với đúng deadline thì hiển thị 3 radio button Bad, OK hoặc Good.
+- đối vối trể deadline thì hiển thì 2 radio button mức Bad hoặc  OK.
+-> sau khi nhấn xác nhận task sẽ có trạng thái được duyệt Completed
+
+
+
+------------Nhân viên -----------------------------
+
+========== Trang task.php ===================
++  Trang danh sách task(task.php) của nhân viên sẽ hiện ra các task của nhân viên đó trừ task trạng thái
+Canceled.
++ Hiển thị (Mã task, tiêu đề,  deadline, trạng thái )
++  Nút thông tin sẽ hiển thị toàn bộ  thông tin của task (modal) -> Tiêu đề, nhân viên, 
+mô tả, 'file đính kèm', deadline, trạng thái (tiến trình) .
++ Nút chi tiết sẽ chuyển tới trang chi tiết task (Trạng thái > 1 thì hiển thị )
++ Nút Start (Trạng thái < 1 thì hiển thị ) thì sẽ bắt đầu task và trạng thái được chuyển lên 1 (in progress)
+
+
+
+========== Trang chitiettask.php
++ Nút submit task khi submit -> trạng thái chuyển thành đang xử lí và waiting
++ Hiển thị (Mã task, tiêu đề, nhân viên, deadline, trạng thái duyệt)
++ Nút chi tiết sẽ hiển thị toàn bộ chi tiết task nộp của nhân viên (modal) -> Tiêu đề, mô tả của nhân viên,
+file đính kèm) 
++ Nút phản hồi (Trạng thái duyệt -> 2) sẽ hiện thị modal :
+- Đối với không được duyệt sẽ hiển thị 'file đính kèm', feedback của trưởng phòng
+- Đối với được duyệt sẽ hiển thị kết quả đánh giá

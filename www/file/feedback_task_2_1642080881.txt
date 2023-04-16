@@ -1,0 +1,11 @@
+if(parentCate.getChildCategories() == null){
+                                        lstParentCateTemp.add(childCate);
+                                        parentCate.setChildCategories(lstParentCateTemp);
+
+                                    }else {
+                                        lstParentCateTemp = parentCate.getChildCategories();
+                                        lstParentCateTemp.add(childCate);
+                                        parentCate.setChildCategories(lstParentCateTemp);
+
+                                    }
+                                    CategoryRef.child(parentCate.getId()).removeValue();

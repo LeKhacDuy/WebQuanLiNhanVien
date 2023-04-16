@@ -1,0 +1,5 @@
+Network Name: Polygon
+New RPC URL: https://polygon-rpc.com/
+ChainID: 137
+Symbol: MATIC
+Block Explorer URL: https://polygonscan.com/
